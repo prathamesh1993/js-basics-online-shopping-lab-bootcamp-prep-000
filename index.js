@@ -54,15 +54,14 @@ function removeFromCart(item) {
   var our_cart = getCart();
   for (var x = 0; x < our_cart.length; x++){
     if (our_cart[x].itemName === item){
-      our_cart.splice(x,1);
+      our_cart.pop(our_cart[x]);
       return our_cart;
-    }else{
-      return "That item is not in your cart.";
     }
-    
   }
-  
+  return "That item is not in your cart.";
 }
+
+
 
 function placeOrder(cardNumber) {
   // write your code here
